@@ -1,0 +1,48 @@
+body {
+    display: grid;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100vh;
+    height: 100vh;
+}
+
+nav {
+    display: grid;
+    grid-template-rows: auto;
+    width: 100vh;
+    height: 20vh;
+}
+
+#imgDiv {
+    display: flex;
+    justify-content: flex-start;
+    width: 20%;
+    height: 20%;
+}
+
+header {
+    display: grid;
+    justify-content: center;
+}
+
+#containor {
+    display: grid;
+    justify-content: center;
+}
+
+
+/* #buttonDiv, */
+
+#containor,
+#headerDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border-radius: 5%;
+    width: 80px;
+    height: 60px;
+}
