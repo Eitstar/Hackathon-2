@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <title>COVID_Ride</title>
+    <title>Virtual_Ride_Home_page</title>
 </head>
+<!-- onload="getData()" -->
 
 <body>
     <nav>
@@ -28,28 +29,24 @@
     </header>
     <div id="containor">
 
-        <!-- <div id="buttonDiv"> -->
-
-        <form id="formID" action="http://localhost:5555/" method="POST">
-            <label for="destination">Select Your Next destination:</label>
-            <select name="selcet" id="selectCountry"></select>
-            <option value="value"></option>
-            <select name="selcet" id="selectContinent"></select>
-            <option value="value"></option>
-            <button id="sunBtn" name="btn" type="submit" onclick="getData()">Click to Start</button>
-        </form>
+        <h3>Choose Your travel destination</h3>
 
 
+        <label for="">Which Continent would you like to visit? </label>
+        <select name="selcet" id="continent"></select>
+        <option value="value" selected="1"></option>
+        <option value="value" selected="4"></option>
+        <label for="">Now select the designated country </label>
+        <select name="selcet" id="country"> Now select the designated country </select>
+        <option value="value" selected="2"></option>
+        <option value="value" selected="3"></option>
+        <button id="sunBtn" name="btn" type="submit" onclick="sendOption()">Start Here </button>
 
 
-
-
-        <!-- 
-        </div> -->
 
 
     </div>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
     <footer>
 
     </footer>

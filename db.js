@@ -1,65 +1,28 @@
-const knex = require('knex');
+// const { Client } = require('pg')
+// const client = new Client({
 
-const db = knex({
-    client: 'pg',
-    connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'password369',
-        database: 'virtualride'
-    }
-});
+//     user: 'postgres',
+//     password: 'password369',
+//     host: '127.0.0.1',
+//     database: 'virtualride'
+
+// })
 
 
-// const dbcountries = () => {
+// execute()
 
-// db.select('country_name').from('countries')
-
-// .then(data => {
-//         console.log(data);
-
-//     })
-//     .catch(err => {
-//         console.log(err);
-
-//     })
-
-// }
-
-
-// module.exports = {
-//     dbcountries
-// }
-
-
-
-
-// db.select('continent').from('currencies')
-
-// .then(data => {
-//         return console.log(data);
-
-//     })
-//     .catch(err => {
-//         console.log(err);
-
-//     })
-
-
-// db('countries')
-//     .join('currencies', 'countries.id', 'countries.id')
-//     .select('continent', 'country_name ')
-
-
-
-// const innerJoin = () =>
-
-//     {
-const innerJoin = db('countries')
-    .join('currencies', 'countries.id', 'currencies.countries.id')
-    .select('continent', 'country_name ')
-
+// async function execute() {
+//     try {
+//         await client.connect()
+//         console.log("Connected successfully")
+//         const couResults = await client.query("select country_name from countries")
+//         const curResults = await client.query("select continent from currencies")
+//         console.table(curResults.rows)
+//         console.table(couResults.rows)
+//     } catch (err) {
+//         console.log(`Somthing want worng ${err}`)
+//     } finally {
+//         await client.end()
+//         console.log("client disconnected successfully")
 //     }
-
-// innerJoin()
-console.log(innerJoin)
+// }

@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon db.js"
+        "start": "nodemon backend.js"
     },
     "repository": {
         "type": "git",
@@ -22,12 +22,14 @@
     },
     "dependencies": {
         "axios": "^0.21.1",
+        "bcrypt": "^5.0.1",
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "fs": "0.0.1-security",
         "knex": "^0.95.6",
         "pg": "^8.6.0",
-        "prompt": "^1.1.0"
+        "prompt": "^1.1.0",
+        "ramda": "^0.27.1"
     }
 }
