@@ -8,14 +8,19 @@ const sendOption = () => {
     let continent = document.querySelector('#continent').value
     let country = document.querySelector('#country').value
 
-    console.log(continent)
-    fetch('http://localhost:5555/homepage', {
-        method: 'POST',
+
+    fetch('http://localhost:5555/', {
+        method: "get",
         headers: {
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ continent, country })
-    })
+        }
+
+    }).then(function(res) {
+        res.text().then(function(text) {
+            poemDisplay.textContent = text;
+
+        });
+    });
 
 }
 
