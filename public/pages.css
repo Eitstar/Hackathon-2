@@ -1,0 +1,181 @@
+ /* ==================
+    general css  
+================== */
+ 
+ body {
+     display: grid;
+     text-align: center;
+     font-family: 'Montserrat', sans-serif;
+     padding: 0;
+     margin: 0;
+     width: 100%;
+     height: 100%;
+     color: azure;
+     background-size: cover;
+     backdrop-filter: blur(6px);
+     cursor: url(pictures/cursor-small.jpg), auto !important;
+ }
+ 
+ body.australia {
+     background-image: url(pictures/aus/syndey2.png);
+ }
+ 
+ body.brazil {
+     background-image: url(pictures/brazil/landmark.jpg);
+ }
+ 
+ body.egypt {
+     background-image: url(pictures/egypt/Pyramids.jpg);
+ }
+ 
+ body.france {
+     background-image: url(pictures/france/eifel.jpg);
+ }
+ 
+ body.china {
+     background-image: url(pictures/china/greatwall.jpg);
+ }
+ 
+ nav * {
+     list-style: none;
+     color: white;
+     padding: 0;
+     margin: 0;
+ }
+ 
+ img {
+     max-width: 80px;
+     max-height: 80px;
+ }
+ /* ==================
+    header part 
+================== */
+ 
+ header {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     width: 100%;
+     /* background-color: #323232; */
+     background-image: linear-gradient(black, #323232);
+ }
+ 
+ nav {
+     display: flex;
+     justify-content: flex-end;
+     font-size: 1rem;
+     list-style-type: none;
+     text-transform: uppercase;
+ }
+ 
+ ul {
+     display: flex;
+ }
+ 
+ a {
+     display: block;
+     padding: 5px;
+     text-decoration: none;
+     color: #FFF;
+ }
+ 
+ .logimg {
+     display: flex;
+ }
+ 
+ .flagimg {
+     display: flex;
+     /* position: absolute;
+     float: right;
+     margin-left: 700px; */
+ }
+ 
+ .headLine {
+     display: flex;
+     justify-content: center;
+     font-size: 1.2rem;
+     font-weight: 800;
+     opacity: 0.6;
+     transition: 0.3s;
+ }
+ 
+ .headLine:hover {
+     opacity: 3
+ }
+ /* ==================
+     main part
+================== */
+ 
+ main {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     width: 80%;
+     padding: 0%;
+     margin: 10px;
+ }
+ 
+ button {
+     border-radius: 5%;
+     width: 60px;
+     height: 40px;
+ }
+ 
+ iframe {
+     display: block;
+     margin: 10px;
+     height: fit-content;
+     width: fit-content;
+ }
+ /* ==================
+     text part
+================== */
+ 
+ .textSection {
+     color: #323232;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     width: 100%;
+     padding: 0%;
+ }
+ 
+ .topFive {
+     display: flex;
+     justify-content: center;
+     font-size: 1rem;
+     font-weight: 600;
+ }
+ 
+ h3 {
+     display: flex;
+     justify-content: center;
+     opacity: 0.5;
+     transition: 0.3s;
+ }
+ 
+ h3:hover {
+     opacity: 3
+ }
+ 
+ .lifive {
+     display: flex;
+     justify-content: space-evenly;
+     /* list-style: outside; */
+ }
+ 
+ p {
+     text-align: center;
+     font-size: 1rem;
+     font-weight: 600;
+ }
+ /* ==================
+     footer part
+================== */
+ 
+ footer {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     width: 100%;
+ }
