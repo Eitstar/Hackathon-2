@@ -12,7 +12,7 @@
     <title>China</title>
 </head>
 
-<body class="china">
+<body class="china" onload="temp('china')">
 
 
     <header>
@@ -34,12 +34,18 @@
 
 
     <main>
-        <div id="weather"></div>
+        <div id="weather">
+            <i></i>
+            <div id="name"></div>
+            <div id="temp_now"></div>
+            <div id="humidity"></div>
+            <div id="max_temp"></div>
+            <div id="sky"></div>
+            <div id="min_temp"></div>
+        </div>
 
 
-        <div>
-
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/L0jXw_710Q0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/L0jXw_710Q0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         </div>
 
@@ -82,7 +88,7 @@
 
 
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 

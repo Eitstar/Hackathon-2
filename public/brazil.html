@@ -12,7 +12,7 @@
     <title>Brazil</title>
 </head>
 
-<body class="brazil">
+<body class="brazil" onload="temp('brazil')">
     <header>
         <img class="logimg" src="Ride-logos_white.png" alt="site logo">
 
@@ -28,11 +28,17 @@
 
 
     <main>
-        <div id="weather"></div>
+        <div id="weather">
+            <i></i>
+            <div id="name"></div>
+            <div id="temp_now"></div>
+            <div id="humidity"></div>
+            <div id="max_temp"></div>
+            <div id="sky"></div>
+            <div id="min_temp"></div>
+        </div>
 
-        <div>
-
-            <iframe src="https://www.youtube.com/embed/sW1SWAN6zlQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/sW1SWAN6zlQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
         </div>
@@ -44,6 +50,17 @@
         </div>
 
     </main>
+
+    <div id="weather">
+        <i></i>
+        <div id="name"></div>
+        <div id="temp_now"></div>
+        <div id="humidity"></div>
+        <div id="max_temp"></div>
+        <div id="sky"></div>
+        <div id="min_temp"></div>
+    </div>
+
     <div class="headLine">
         <h1>Welcome To Brazil</h1>
     </div>
@@ -77,6 +94,6 @@
     </footer>
 
 
-    <script src="script.js "></script>
+    <script src="./script.js"></script>
 
 </html>

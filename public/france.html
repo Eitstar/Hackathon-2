@@ -12,7 +12,8 @@
     <title>France</title>
 </head>
 
-<body class="france"> ​
+<body class="france" onload="temp('france')">
+
     <header>
         ​ ​ <img class="logimg" src="Ride-logos_white.png" alt="site logo">
 
@@ -27,11 +28,18 @@
     </header>
     ​ ​
     <main>
-        <div id="weather"></div>
-        ​ ​
-        <div>
-            ​
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/j9q3NLqUvxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="weather">
+            <i></i>
+            <div id="name"></div>
+            <div id="temp_now"></div>
+            <div id="humidity"></div>
+            <div id="max_temp"></div>
+            <div id="sky"></div>
+            <div id="min_temp"></div>
+        </div>
+
+        ​
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/j9q3NLqUvxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         ​
         <div>
@@ -45,7 +53,7 @@
         <h1>Welcome To France</h1>
     </div>
 
-
+    <!-- <div class="slideShow"></div> -->
     <section class="textSection">
         ​
         <h3>Top 5 Must See Sights In France </h3>
@@ -73,7 +81,7 @@
         ​
     </footer>
     ​ ​ ​
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 ​ ​
 
