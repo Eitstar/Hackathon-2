@@ -8,68 +8,34 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-
     <title>Virtual_Ride_Home_page</title>
 </head>
-
+<!-- onload="getData()" -->
 
 <body>
+    <nav>
+        <div id="imgDiv">
+            <img src="logo.png" alt="site logo">
+        </div>
 
-
+    </nav>
     <header>
-
-
-        <img class="flagimg" src="logo.png" alt="site logo">
-
-
-        <nav>
-            <ul class="nava">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Join Us</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-
-        </nav>
+        <div id="headerDiv">
+            <h2>Welcome to Virtual Ride🌏</h2>
+            <h3>Your Ultimate Virtual Vacation </h3>
+            <button onclick="findOptionVal()">L'ets Fly!</button>
+        </div>
 
     </header>
-    <!-- <main> -->
-
-    <div class="headLine">
-        <h1> Welcome to Virtual Ride🌏</h1>
-
-    </div>
-
-    <div>
-        <h3>Your Ultimate Virtual Vacation </h3>
-    </div>
-
-    <div class="centerDiv">
-        <div class="countryDiv">
-            <select id="country"></select>
-        </div>
-
-
-        <div class="btn">
-            <button class="rainbow-button" onclick="findOptionVal()">Let's Fly!</button>
-        </div>
-
-
+    <main>
+        <select id="country"></select>
+    </main>
 
     </div>
-    <!-- 
-    </main> -->
-
-
     <script src="script.js"></script>
     <footer>
-        <a href="https://www.instagram.com/virtualvacation.in/?hl=en"><i class="fab fa-instagram fa-1x"></i></a>
-        <a href="https://www.facebook.com/Virtual-Vacation-107873870917616/"><i class="fab fa-facebook-f fa-1x"></i></a>
-        <a href="https://www.tiktok.com/tag/virtualvacation?lang=en"> <i class="fab fa-tiktok fa-1x"></i></a>
 
     </footer>
-    <p>© 2021 Eitan & Aviv's web world</p>
 </body>
 
 </html>

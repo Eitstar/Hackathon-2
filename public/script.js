@@ -1,5 +1,5 @@
-<< << << < HEAD
-const getCountriesDataFromDb = (async() => {
+
+const getCountriesDataFromDb = (async () => {
 
     const data = await fetch('http://localhost:3000/homepage')
     const result = await data.json()
@@ -7,84 +7,37 @@ const getCountriesDataFromDb = (async() => {
 
 })()
 
-const putAllDatainSecstion = async(data) => {
-        const country = document.querySelector('select')
-        console.log(country)
-        let counter = 0
-        for (let item of data) {
-            if (counter === 5)
-                return
-            counter++
-            let option = document.createElement('option')
-            option.innerHTML += item.country_name
-            country.appendChild(option)
+const putAllDatainSecstion = async (data) => {
+    const country = document.querySelector('select')
+    console.log(country)
+    let counter = 0
+    for (let item of data) {
+        if (counter === 5)
+            return
+        counter++
+        let option = document.createElement('option')
+        option.innerHTML += item.country_name
+        country.appendChild(option)
 
-        }
-
-        ===
-        === =
-
-        const getCountriesDataFromDb = (async() => {
-
-            const data = await fetch('http://localhost:3000/homepage')
-            const result = await data.json()
-            return await putAllDatainSecstion(result)
-
-        })()
-
-        const putAllDatainSecstion = async(data) => {
-            const country = document.querySelector('select')
-            console.log(country)
-            let counter = 0
-            for (let item of data) {
-                if (counter === 5)
-                    return
-                counter++
-                let option = document.createElement('option')
-                option.innerHTML += item.country_name
-                country.appendChild(option)
-
-            }
-
-            >>>
-            >>> > 69 b5feb06dd46c72349b0c8e3623e5a56cb14a1c
+    }
 
 
-        }
 
-        <<
-        << << < HEAD
-        const findOptionVal = () => {
-                const options = document.querySelectorAll('option')
-                let optionVal;
-                options.forEach(item => {
-                    if (item.selected) {
-                        return optionVal = item.value.toLocaleLowerCase()
-                    }
-                })
-                return goToRoute(optionVal) ===
-                    === =
-                    const findOptionVal = () => {
-                        const options = document.querySelectorAll('option')
-                        let optionVal;
-                        options.forEach(item => {
-                            if (item.selected) {
-                                return optionVal = item.value.toLocaleLowerCase()
-                            }
-                        })
-                        return goToRoute(optionVal) >>>
-                            >>> > 69 b5feb06dd46c72349b0c8e3623e5a56cb14a1c
+}
 
-                    }
+const findOptionVal  = () =>{
+const options = document.querySelectorAll('option')
+let optionVal ;
+options.forEach(item =>{
+    if (item.selected){
+        return optionVal=item.value.toLocaleLowerCase()
+    }
+})
+return goToRoute(optionVal)
+
+}
 
 
-                <<
-                << << < HEAD
-                const goToRoute = async(optionVal) => {
-                        await fetch(`http://localhost:3000/${optionVal}`)
-                    } ===
-                    === =
-                    const goToRoute = async(optionVal) => {
-                            await fetch(`http://localhost:3000/${optionVal}`)
-                        } >>>
-                        >>> > 69 b5feb06dd46c72349b0c8e3623e5a56cb14a1c
+const goToRoute = async (optionVal) =>{
+   await fetch(`http://localhost:3000/${optionVal}`)
+}

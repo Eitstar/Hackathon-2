@@ -3,8 +3,7 @@ const bp = require('body-parser');
 const fs = require('fs');
 const cors = require('cors');
 const Client = require('pg').Client
-    // const path = require('path');
-    // const filePath = path.join(__dirname, '/public');;
+    // const route = require('route');
 const app = exp();
 app.use(exp.json());
 
@@ -17,21 +16,16 @@ app.use(cors());
 
 const client = new Client({
     user: 'postgres',
-    password: 'password369',
+    password: '1234rewq',
     host: 'localhost',
-    port: '5432',
+    port: '5433',
     database: "virtualride"
 
 })
 
-
-app.use('/static', exp.static('/.public'))
-    // fs.openSync(filePath, '/.public');
-    // console.log(__dirname)
+// const conString = "postgres://YourUserName:YourPassword@YourHostname:5432/YourDatabaseName";
 
 app.get('/homepage', (req, res) => {
-
-    res.sendFile('public/index.html', { root: __dirname })
     console.log('in homepage get...')
     execute()
         .then(result => {
@@ -71,7 +65,6 @@ async function execute() {
 
 app.route('/australia')
     .get((res, req) => {
-        res.sendFile('public/australia.html', { root: __dirname })
         console.log('in get australia ')
 
 
@@ -83,7 +76,6 @@ app.route('/australia')
 
 app.route('/france')
     .get((res, req) => {
-        res.sendFile('public/france.html', { root: __dirname })
         console.log('in get france ')
     })
     .post((res, req) => {
@@ -93,7 +85,6 @@ app.route('/france')
 
 app.route('/brazil')
     .get((res, req) => {
-        res.sendFile('public/brazil.html', { root: __dirname })
         console.log('in get brazil ')
     })
     .post((res, req) => {
@@ -103,7 +94,6 @@ app.route('/brazil')
 
 app.route('/china')
     .get((res, req) => {
-        res.sendFile('public/china.html', { root: __dirname })
         console.log('in get china ')
     })
     .post((res, req) => {
@@ -113,7 +103,6 @@ app.route('/china')
 
 app.route('/egypt')
     .get((res, req) => {
-        res.sendFile('public/egypt.html', { root: __dirname })
         console.log('in get egypt ')
     })
     .post((res, req) => {
