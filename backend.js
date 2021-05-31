@@ -1,24 +1,23 @@
-const exp = require('express');
+const express = require('express');
 const bp = require('body-parser');
 const fs = require('fs');
 const cors = require('cors');
 const Client = require('pg').Client
-    // const route = require('route');
-const app = exp();
-app.use(exp.json());
-
+const app = express();
+app.use(express.json());
+const fetch = require("node-fetch");
 
 app.use(bp.json())
-
+app.use(express.static('public'))
 
 const urlencodedParser = bp.urlencoded({ extended: false })
 app.use(cors());
 
 const client = new Client({
     user: 'postgres',
-    password: '1234rewq',
+    password: 'password369',
     host: 'localhost',
-    port: '5433',
+    port: '5432',
     database: "virtualride"
 
 })
