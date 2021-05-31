@@ -1,117 +1,124 @@
-const exp = require('express');
 const bp = require('body-parser');
 const fs = require('fs');
 const cors = require('cors');
 const Client = require('pg').Client
-// const route = require('route');
-const app = exp();
-app.use(exp.json());
-
-
+const express = require('express');
+const app = express();
+app.use(express.json());
+const fetch = require("node-fetch");
 app.use(bp.json())
 
+app.use(express.static('public'))
 
 const urlencodedParser = bp.urlencoded({ extended: false })
 app.use(cors());
 
-const client = new Client({
+const createClient = () => new Client({
     user: 'postgres',
-    password: '1234rewq',
+    password: 'password369',
     host: 'localhost',
-    port: '5433',
+    port: '5432',
     database: "virtualride"
 
-})
+});
 
 // const conString = "postgres://YourUserName:YourPassword@YourHostname:5432/YourDatabaseName";
-
-app.get('/homepage', (req, res) => {
+// app.use('/static', express.static('public'))
+async function getDataFromDb() {
+    //TODO: try to avoid the term "data" , instead use entity-type business name like "country"
     console.log('in homepage get...')
-    execute()
-    .then(result =>{
-        console.log('hello from then')
-        console.table(result.rows)
-        res.send(result.rows)
-    })
+    const x = await execute()
+        // console.table(x.rows)
+    const data = x.rows // TODO: move to execute function
+    return data
+
+}
+
+app.get('/sendData', (req, res) => { //TODO: get instead of send, and countries instead of data
+    console.log('sendData')
+    getDataFromDb()
+        .then(data => res.send(data)) // TODO: better to avoid "then" when not needed. use await instead
 })
 
-app.post('/homepage', urlencodedParser, (req, res) => {
+
+
+
+app.post('/sendData', (req, res) => { // TODO:redundant
     console.log('post in homepage...')
-    // console.log(req.body)
-    // execute(req.body)
-    // res.send(req.body.curResults)
+        // console.log(req.body)
+        // execute(req.body)
+        // res.send(req.body.curResults)
 
 })
 
-async function execute() {
+async function execute() { // TODO:rename to getCountriesFromDB
+    let client;
     try {
+        client = createClient()
         await client.connect()
         console.log("Connected successfully")
         const couResults = await client.query("select country_name from countries")
         return couResults
     } catch (err) {
-        console.log(`Somthing want worng ${err}`)
+        console.log(`Somthing went worng ${err}`)
     } finally {
         await client.end()
         console.log("client disconnected successfully")
     }
 }
 
+async function weatherApi(contrey) {
+    try {
+        const getWeatherData = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${contrey}&appid=e5cc5c4346c7ca6696cd86ea8c303b45`) // TODO: better to collect all keys and passwords in 1 file
+        const result = await getWeatherData.json()
+            // console.log(result)
+        return result
+    } catch (err) {
+        console.log(`somthing went worng ${err}`)
+    }
 
+}
 
 /// all countreis
+//'/public/australia.html'
 
 
 
-app.route('/australia')
-.get((res,req)=>{
-    console.log('in get australia ')
+const supportedCountries = [ // TODO: instead of this list, select from DB. no reason to maintain 2 lists of countries, if you have in DB use it.
+    {
+        name: 'australia',
+        city: 'Sydney'
+    },
+    {
+        name: 'france',
+        city: 'Paris'
+    },
+    {
+        name: 'brasil',
+        city: 'Rio de Janeiro'
+    },
+    {
+        name: 'china',
+        city: 'Beijing'
+    },
+    {
+        name: 'egypt',
+        city: 'Cairo'
+    },
 
-    
-})
-.post((res,req)=>{
-    console.log('in post australia ')
+];
 
-})
- 
-app.route('/france')
-.get((res,req)=>{
-    console.log('in get france ')
-})
-.post((res,req)=>{
-    console.log('in post france ')
 
-})
-
-app.route('/brazil')
-.get((res,req)=>{
-    console.log('in get brazil ')
-})
-.post((res,req)=>{
-    console.log('in post brazil ')
-
-})
-
-app.route('/china')
-.get((res,req)=>{
-    console.log('in get china ')
-})
-.post((res,req)=>{
-    console.log('in post china ')
-
-})
-
-app.route('/egypt')
-.get((res,req)=>{
-    console.log('in get egypt ')
-})
-.post((res,req)=>{
-    console.log('in post egypt ')
-
-})
+for (const country of supportedCountries) {
+    app.route(`/${country.name}`)
+        .get((req, res) => {
+            console.log(`in get ${country.name}`);
+            weatherApi(country.city)
+                .then(result => res.send(result)) // TODO: better use await 
+        })
+}
 
 
 
-
-
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.
+listen(3000, () => console.log('Example app listening on port 3000!'));
