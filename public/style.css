@@ -24,8 +24,8 @@ nav * {
 }
 
 img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 150px;
+    max-height: 150px;
 }
 
 
@@ -117,11 +117,16 @@ main {
     }
 }
 
+label {
+    font-weight: 600;
+    text-align: center;
+}
+
 input {
     margin: .6rem;
-    text-align: center;
     font-size: larger;
-    font-weight: 600;
+    border-radius: 5%;
+    border: black 3px solid;
 }
 
 .profileContainer {
