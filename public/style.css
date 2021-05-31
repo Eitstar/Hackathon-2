@@ -127,11 +127,26 @@ select#country {
     }
 }
 
-input {
-    margin: .6rem;
+label {
     text-align: center;
     font-size: larger;
     font-weight: 600;
+}
+
+input {
+    margin: .6rem;
+    border-radius: 28px;
+    font-size: larger;
+    font-weight: 600;
+    border: 3px solid black;
+}
+
+#btn {
+    margin: .6rem;
+    border-radius: 28px;
+    font-size: larger;
+    font-weight: 600;
+    border: 3px solid darkgray;
 }
 
 .profileContainer {
@@ -157,6 +172,8 @@ input {
 p {
     padding-top: 20px;
     white-space: nowrap;
+    font-weight: 600;
+    font-size: large;
 }
 
 
