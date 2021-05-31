@@ -36,11 +36,12 @@
      background-image: url(pictures/china/greatwall.jpg);
  }
  
- nav * {
+ nav li {
      list-style: none;
      color: white;
      padding: 0;
      margin: 0;
+     display: inline;
  }
  
  img {
@@ -53,7 +54,9 @@
  
  header {
      display: flex;
+     position: sticky;
      flex-direction: row;
+     margin: -37px 20px 43px 0px;
      justify-content: space-between;
      width: 100%;
      /* background-color: #323232; */
@@ -70,24 +73,32 @@
  
  ul {
      display: flex;
+     overflow: auto
  }
  
  a {
      display: block;
-     padding: 5px;
+     padding: 39px;
      text-decoration: none;
      color: #FFF;
+     font-weight: 800;
  }
  
  .logimg {
-     display: flex;
+     margin-top: 39px;
  }
  
  .flagimg {
-     display: flex;
-     /* position: absolute;
-     float: right;
-     margin-left: 700px; */
+     margin-top: 38px;
+ }
+ 
+ div#weather {
+     color: black;
+     font-weight: 600;
+     border: 2px solid black;
+     width: 109px;
+     margin: 0px -1px -6px 39px;
+     height: 210px;
  }
  
  .headLine {
@@ -111,8 +122,8 @@
      flex-direction: row;
      justify-content: space-between;
      width: 80%;
-     padding: 0%;
-     margin: 10px;
+     padding: 2%;
+     margin: -62px 21px -78px 71px;
  }
  
  button {
@@ -165,9 +176,8 @@
  }
  
  p {
-     text-align: center;
-     font-size: 1rem;
-     font-weight: 600;
+     font-weight: 900;
+     font-size: medium;
  }
  /* ==================
      footer part
@@ -178,4 +188,12 @@
      flex-direction: row;
      justify-content: space-between;
      width: 100%;
+ }
+ 
+ ol {
+     font-weight: 900;
+ }
+ 
+ path {
+     color: black;
  }
